@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Product Page</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./sass/main.scss" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <section class="product-page">
+      <div class="navbar">
+        <div class="left">
+          <div class="menu-btn">
+            <img src="./images/icon-menu.svg" alt="" />
+          </div>
+          <div class="logo">
+            <img src="./images/logo.svg" alt="logo" />
+          </div>
+          <div class="links">
+            <img src="./images/icon-close.svg" alt="close-btn" id="btnClose" />
+            <ul>
+              <li>Collections</li>
+              <li>Men</li>
+              <li>Women</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <div class="cart">
+            <label class="cart__items hidden"></label>
+            <img src="./images/icon-cart.svg" alt="cart-icon" id="cartBtn" />
+          </div>
+          <div class="profile">
+            <img src="./images/image-avatar.png" alt="profile-img" />
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="bookmark">
+          <div class="bookmark__title">
+            <h3>Cart</h3>
+          </div>
+
+          <div class="empty-cart hidden">
+            <p>Your cart is empty.</p>
+          </div>
+          <div class="bookmark__item ">
+            <div class="img-box">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="bookmark thumbnail">
+            </div>
+            <div class="info-box">
+              <label>Fall Limited Edition Sneakers</label>
+
+              <label>$125.00 x <span class="totalOrder">3</span> <span class="sumPrice">$375.00</span> </label>
+            </div>
+            <div class="delete-box">
+              <button id="btnDelete" class="btn-delete"><img src="./images/icon-delete.svg" alt="btn delete"></button>
+            </div>
+          </div>
+          <div class="bookmark__checkout ">
+            <button id="btnCheckout" class="btn-checkout">Checkout</button>
+          </div>
+        </div>
+        <div class="gallery">                
+          <div class="swiper-container gallery-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./images/image-product-1.jpg" alt="product-img1"></div>
+                <div class="swiper-slide"><img src="./images/image-product-2.jpg" alt="product-img2"></div>
+                <div class="swiper-slide"><img src="./images/image-product-3.jpg" alt="product-img3"></div>
+                <div class="swiper-slide"><img src="./images/image-product-4.jpg" alt="product-img4"></div>              </div>
+                <div class="swiper-button-prev"><img src="./images/icon-previous.svg" alt=""></div>
+                <div class="swiper-button-next"><img src="./images/icon-next.svg" alt=""></div>
+          </div>
+      
+          <div class="swiper-container gallery-thumbs">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./images/image-product-1-thumbnail.jpg" alt="thumbnail-img1"></div>
+                <div class="swiper-slide"><img src="./images/image-product-2-thumbnail.jpg" alt="thumbnail-img2"></div>
+                <div class="swiper-slide"><img src="./images/image-product-3-thumbnail.jpg" alt="thumbnail-img3"></div>
+                <div class="swiper-slide"><img src="./images/image-product-4-thumbnail.jpg" alt="thumbnail-img4"></div>
+            </div>
+          </div>
+      </div>
+        <div class="content-text">
+          <div class="content-text__text-container">
+            <label> Sneaker Company </label>
+            <h1>Fall Limited Edition Sneakers</h1>
+            <p>
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </p>
+          </div>
+          <div class="content-text__price-container">
+            <div class="left">
+              <h1>$125.00</h1>
+              <label>50%</label>
+            </div>
+            <div class="right"><label for>$250.00</label></div>
+          </div>
+          <div class="btns">
+            <div class="btns__btnPlusMinus-container">
+              <button id="btnMinus" class="btn-minus">
+                <img src="./images/icon-minus.svg" alt="" />
+              </button>
+              <label id="totalItem" class="total-item">0</label>
+              <button id="btnPlus" class="btn-plus">
+                <img src="./images/icon-plus.svg" alt="" />
+              </button>
+            </div>
+            <div class="btns__addtocart-container">
+              <button id="addToCart" class="btn-addTo">
+                <img src="./images/icon-cart-white.svg" alt="cart image" /> Add
+                to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

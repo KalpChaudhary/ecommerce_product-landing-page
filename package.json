@@ -1,0 +1,22 @@
+{
+  "name": "ecommerce-product-page",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "watchreload": {
+      "files": [
+        "./src/*.html",
+        "./src/*.js",
+        "./src/sass/*.scss"
+      ]
+    }
+  },
+  "author": "Kalp Chaudhary",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.4.0",
+    "parcel": "^2.4.0",
+    "parcel-plugin-watch-reload": "^1.0.3"
+  }
+}

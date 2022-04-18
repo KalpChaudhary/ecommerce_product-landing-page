@@ -1,0 +1,362 @@
+.content {
+  // position: relative;
+  // width: max(85%, 400px);
+  width: max(85%, 400px);
+  margin-left: 1.5rem;
+  position: relative;
+  margin-inline:auto ;
+}
+
+@media (min-width: 1000px) {
+  .content {
+    padding: 5rem 4rem;
+    display: flex;
+    gap: 5rem;
+    width: 85%;
+    // justify-content:space-between;
+    // align-items:center;
+  }
+}
+
+.bookmark {
+  position: absolute;
+  display: none;
+  right: 0.7rem;
+  top: 0.7rem;
+  width: 380px;
+  background: #fff;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.4);
+  padding: 2rem 1rem;
+  z-index: 1000;
+  border-radius: 8px;
+
+  &.active {
+    display: block;
+  }
+
+  .empty-cart.hidden {
+    display: none;
+  }
+  .empty-cart {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  &__title {
+    padding: 1rem 0rem;
+    border-bottom: 2px solid rgb(230, 230, 230);
+  }
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+
+    &.hidden {
+      display: none;
+    }
+
+    .img-box {
+      width: 85px;
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+
+    .info-box {
+      line-height: 1.5rem;
+      color: hsl(220, 14%, 50%);
+
+      .sumPrice {
+        color: #000;
+        font-weight: 700;
+      }
+    }
+
+    .delete-box {
+      width: 25px;
+      height: 25px;
+      .btn-delete {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__checkout {
+    width: 100%;
+
+    &.hidden {
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 1rem 0;
+      background: hsl(26, 100%, 55%);
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      font-family: inherit;
+      font-size: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 25px 25px -20px hsl(26, 100%, 55%);
+      cursor: pointer;
+    }
+  }
+}
+
+.gallery {
+  width: 100%;
+  max-width: 400px;
+  // margin: 40px auto;
+  overflow: hidden;
+
+  //メインスライド
+  &-slider {
+    // background: orange;
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    position: relative;
+
+    .swiper-slide {
+      width: auto;
+      height: 400px;
+
+      img {
+        display: block;
+        width: auto;
+        height: 100%;
+        // margin: 0 auto;
+      }
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      content: " ";
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      border-radius: 50%;
+      // position: absolute;
+      img {
+        width: 30%;
+      }
+    }
+  }
+
+  //サムネイルスライド
+  &-thumbs {
+    width: 100%;
+    display: none;
+    padding: 0;
+    overflow: hidden;
+
+    @media (min-width: 1000px) {
+      & {
+        display: block;
+      }
+    }
+
+    .swiper-slide {
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      overflow: hidden;
+      opacity: 0.1;
+
+      &-active {
+        opacity: 1;
+      }
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .swiper {
+    border-radius: 10px;
+    overflow: hidden;
+    &-slide {
+      img {
+        border-radius: 10px;
+
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.content-text {
+  padding: 0 1.5rem 4rem 1.5rem;
+  position: relative;
+  top: 1.5rem;
+
+  &__text-container {
+    width: 100%;
+    & > * {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: hsl(26, 100%, 62%);
+    }
+    h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: hsl(220, 13%, 13%);
+    }
+    p {
+      color: hsl(219, 9%, 60%);
+      font-weight: 500;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    &__text-container {
+      width: 65%;
+
+      & > * {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+      margin-bottom: 1rem;
+    }
+
+    .left {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      h1 {
+        font-size: 2rem;
+        color: hsl(220, 13%, 13%);
+      }
+
+      label {
+        font-size: 1rem;
+        padding: 0.2rem 0.5rem;
+        background: hsl(25, 100%, 94%);
+        color: hsl(26, 100%, 50%);
+        border-radius: 5px;
+        font-weight: 700;
+      }
+    }
+
+    .right {
+      label {
+        font-size: 1.1rem;
+        color: hsl(219, 9%, 65%);
+        font-weight: 600;
+        -webkit-text-decoration-line: line-through; /* Safari */
+        text-decoration-line: line-through;
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    &__price-container {
+      width: 65%;
+
+      & > * {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+.btns {
+  width: 350px;
+
+  &__btnPlusMinus-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: hsl(223, 64%, 97%);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 10px;
+
+    button {
+      width: 100%;
+      background: transparent;
+      border: none;
+      width: 15px;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__addtocart-container {
+    button {
+      width: 100%;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background: hsl(26, 100%, 55%);
+      padding: 1rem 0;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 25px 35px -15px hsl(26, 100%, 55%);
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .btns {
+    display: flex;
+    width: 70%;
+    gap: 1rem;
+
+    &__btnPlusMinus-container {
+      width: 35%;
+    }
+
+    &__addtocart-container {
+      button {
+        width: 200%;
+        padding: 1rem 0;
+      }
+    }
+  }
+}
